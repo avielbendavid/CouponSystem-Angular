@@ -1,13 +1,13 @@
 <mat-tab-group mat-align-tabs="center">
     <mat-tab label="COMPANIES">
-        <button mat-fab matTooltip="Add new company" style="margin: 20px;position: relative;left: 20px;top: 50px;font-size: 25px;background-color: rgb(156, 73, 142);" class="addCompanyBtn" (click)="openAddCompanyDialog()" >+</button>
+        <button mat-fab matTooltip="Add new company" style="margin: 20px;position: relative;left: 20px;top: 145px;font-size: 25px;background-color: rgb(156, 73, 142);" class="addCompanyBtn" (click)="openAddCompanyDialog()" >+</button>
         <app-companies-table (deleteCompanyById)="deleteCompany($event)" (refreshTable)="refreshCompaniesTable()"
             *ngIf="!loading" [companiesTableColumn]="companiesTabelColumn" [companiesTableData]="companiesTableData">
         </app-companies-table>
     </mat-tab>
 
     <mat-tab label="CUSTOMERS">
-        <button mat-fab matTooltip="Add new customer" style="margin: 20px;position: relative;left: 20px;top: 50px;font-size: 25px;background-color: rgb(156, 73, 142);" class="addCompanyBtn"  (click)="openAddCustomerDialog()" >+</button>
+        <button mat-fab matTooltip="Add new customer" style="margin: 20px;position: relative;left: 20px;top: 145px;font-size: 25px;background-color: rgb(156, 73, 142);" class="addCompanyBtn"  (click)="openAddCustomerDialog()" >+</button>
         <app-customers-table (refreshTable)="refreshCustomersTable()" (deleteCustomerById)="deleteCustomer($event)"
             [customersTableColumn]="customersTabelColumn" [customersTableData]="customersTableData">
         </app-customers-table>
