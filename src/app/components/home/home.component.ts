@@ -44,7 +44,7 @@ export class HomeComponent implements OnInit {
       this.dialog.open(CouponDetailsDialogComponent, { data: { coupon: coupon, message: 'BUY NOW' }, panelClass: 'ppp', backdropClass: 'dark' });
     }
     else {
-      this.dialog.open(CouponDetailsDialogComponent, { data: { coupon: coupon, message: 'Please login as CUSTOMER to purchase this cou' }, panelClass: 'ppp', backdropClass: 'dark' });
+      this.dialog.open(CouponDetailsDialogComponent, { data: { coupon: coupon, message: 'Please login as CUSTOMER to purchase this coupon' }, panelClass: 'ppp', backdropClass: 'dark' });
     }
   }
 
