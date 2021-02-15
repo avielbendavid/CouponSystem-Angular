@@ -1,0 +1,46 @@
+<form [formGroup]="editCustomerFormGroup">
+    <h2>Edit Customer</h2>
+    <label>First Name</label>
+    <input [value]="customer.firstName" class="dialog_input" #customerFirstName placeholder="FirstName..."
+        formControlName="firstName" [ngClass]="{wrong_detail_input:(editCustomerFormGroup.controls.firstName.errors?.required&&this.editCustomerFormGroup.controls.firstName.touched)||
+            (editCustomerFormGroup.controls.firstName.errors?.pattern)}">
+    <br>
+    <span *ngIf="editCustomerFormGroup.controls.firstName.errors?.required" class="wrong_detail_span">*Please enter
+        First Name</span>
+    <span *ngIf="editCustomerFormGroup.controls.firstName.errors?.pattern" class="wrong_detail_span">*Must start with
+        capital letter</span>
+    <br>
+    <label>Last Name</label>
+    <input [value]="customer.lastName" class="dialog_input" #customerLastName placeholder="LastName..."
+        formControlName="lastName" [ngClass]="{wrong_detail_input:(editCustomerFormGroup.controls.lastName.errors?.required&&this.editCustomerFormGroup.controls.lastName.touched)||
+            (editCustomerFormGroup.controls.lastName.errors?.pattern)}">
+    <br>
+    <span *ngIf="editCustomerFormGroup.controls.lastName.errors?.required" class="wrong_detail_span">*Please enter
+        Last Name</span>
+    <span *ngIf="editCustomerFormGroup.controls.lastName.errors?.pattern" class="wrong_detail_span">*Must start with
+        capital letter</span>
+    <br>
+    <label>Email Address</label>
+    <input [value]="customer.email" class="dialog_input" #customerEmailAddress placeholder="EmailAddress..."
+        formControlName="emailAddress" [ngClass]="{wrong_detail_input:(editCustomerFormGroup.controls.emailAddress.errors?.required&&this.editCustomerFormGroup.controls.emailAddress.touched)||
+            (editCustomerFormGroup.controls.emailAddress.errors?.email)}">
+    <br>
+    <span *ngIf="editCustomerFormGroup.controls.emailAddress.errors?.required" class="wrong_detail_span">*Please enter
+        email</span>
+    <span *ngIf="editCustomerFormGroup.controls.emailAddress.errors?.email" class="wrong_detail_span">*Please enter valid email</span>
+    <br>
+    <label>Password</label>
+    <input [value]="customer.password" class="dialog_input" #customerPassword placeholder="Password..."
+        formControlName="password"
+        [ngClass]="{wrong_detail_input:(editCustomerFormGroup.controls.password.errors?.required&&this.editCustomerFormGroup.controls.password.touched)||
+            (editCustomerFormGroup.controls.password.errors?.minlength&&this.editCustomerFormGroup.controls.password.touched)||
+            (editCustomerFormGroup.controls.password.errors?.maxlength&&this.editCustomerFormGroup.controls.password.touched)}">
+    <br>
+    <span *ngIf="editCustomerFormGroup.controls.password.errors?.required" class="wrong_detail_span">*Please enter
+        password</span>
+    <span *ngIf="editCustomerFormGroup.controls.password.errors?.minlength" class="wrong_detail_span">*Min chars: 5</span>
+    <span *ngIf="editCustomerFormGroup.controls.password.errors?.maxlength" class="wrong_detail_span">*Max chars: 8</span>
+    <br>
+    <button (click)="editCustomer()" class="dialog_btn" [disabled]="this.editCustomerFormGroup.invalid">SAVE</button>
+    <button mat-dialog-close class="dialog_btn">CLOSE</button>
+</form>

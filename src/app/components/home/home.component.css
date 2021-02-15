@@ -1,0 +1,74 @@
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 25px;
+}
+
+#header_div {
+    background: url(/assets/images/shopping_new.jpg);
+    height: 200px;
+    width: 50%;
+    border-radius: 8px;
+    color: #f5f5f5;
+    background-size: cover;
+    box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.25);
+}
+
+.header_btn {
+    height: 40px;
+    font-size: x-large;
+    left: 30px;
+    position: relative;
+    top: 150px;
+    outline: none;
+}
+
+main {
+    color: #414040;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+#user_inf_img {
+    /* height: 550px; */
+    /* width: 400px; */
+    height: 400px;
+    width: 300px;
+    border: 1px solid #9da8b3;
+    border-radius: 8px;
+    box-shadow: 2px 5px 5px rgb(158, 145, 145);
+    background: url(/assets/images/home_page.PNG);
+    background-size: 100% 100%;
+    transition: box-shadow 0.5s;
+    margin-right: 300px;
+    margin-top: 100px;
+}
+
+#user_inf_img:hover {
+    cursor: pointer;
+    box-shadow: 2px 12px 12px rgb(52, 52, 204);
+}
+
+#main_start_btn {
+    margin-top: 40px;
+    height: 60px;
+    width: 220px;
+}
+
+#main_hr {
+    color: #f5f5f5;
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+::placeholder {
+    color: rgb(110, 12, 86);
+}
+

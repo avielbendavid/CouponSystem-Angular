@@ -1,0 +1,18 @@
+<h3 mat-dialog-title style="text-align: center;">
+    Give an ATTENTION
+</h3>
+<img src="assets/images/warning.png" style="position: relative;
+left: 50%;
+transform: translate(-50%);width: 80px;">
+<mat-dialog-content>
+    {{message}}
+</mat-dialog-content>
+<mat-dialog-actions class="dialog_btn_div">
+    <div style="    display: flex;
+    width: 100%;
+   
+    justify-content: space-evenly;">
+        <button mat-button mat-dialog-close (click)="yes()">YES</button>
+        <button mat-button mat-dialog-close (click)="no()">NO</button>
+    </div>
+</mat-dialog-actions>

@@ -1,0 +1,68 @@
+<div style="height: 100%;">
+    <div *ngIf="!loading" class="flex-container">
+        <div class="form-container">
+            <div>
+                <form class="login-form" [formGroup]="loginFormGroup">
+                    <h1>Login</h1>
+                    <span class="subtitle">Email-Address:</span>
+                    <br>
+                    <input class="form_control" [ngClass]="{wrong_detail_input:(this.loginFormGroup.controls.email.errors?.required
+                                &&this.loginFormGroup.controls.email.touched)||
+                                (this.loginFormGroup.controls.email.errors?.email)
+                            }" type="text" formControlName="email">
+                    <span id="emailFormControErrorSpan"
+                        *ngIf="this.loginFormGroup.controls.email.errors?.required&&this.loginFormGroup.controls.email.touched">***
+                        Please enter email-address ***</span>
+                    <span id="emailFormControErrorSpan" *ngIf="this.loginFormGroup.controls.email.errors?.email">***
+                        Please enter valid
+                        email-address ***</span>
+                    <br>
+                    <br>
+                    <span class="subtitle">Password:</span>
+                    <br>
+                    <input class="form_control" [ngClass]="{wrong_detail_input:(this.loginFormGroup.controls.password.errors?.required&&
+                                this.loginFormGroup.controls.password.touched)||
+                                (this.loginFormGroup.controls.password.errors?.minlength)||
+                                (this.loginFormGroup.controls.password.errors?.maxlength)
+                            }" type="password" formControlName="password">
+                    <span id="emailFormControErrorSpan"
+                        *ngIf="this.loginFormGroup.controls.password.errors?.required&&this.loginFormGroup.controls.password.touched">
+                        ***Please enter a password ***</span>
+                    <span id="emailFormControErrorSpan"
+                        *ngIf="this.loginFormGroup.controls.password.errors?.minlength">*** Min charecters : 5
+                        ***</span>
+                    <span id="emailFormControErrorSpan"
+                        *ngIf="this.loginFormGroup.controls.password.errors?.maxlength">*** Max charecters : 8
+                        ***</span>
+                    <br>
+                    <br>
+                    <label>Client Type : ***</label>
+                    <select class="form_control" formControlName="clientType">
+                        <option *ngFor="let type of clientType | keyvalue" [ngValue]="type.value">{{type.value}}
+                        </option>
+                    </select>
+                    <br>
+                    <br>
+                    <button type="button" [disabled]="this.loginFormGroup.invalid"
+                        [ngClass]="{'submit-success-btn':!loginFormGroup.invalid}" (click)="login()"
+                        class="submit-btn">Login
+                    </button>
+                    <span class="change-form-btn"> Don't have an accout ?
+                        <a> Register here </a>
+                    </span>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="loading" class="loading_div">
+        <div>
+            <div class="loading_div_child">
+                <img class="loading_div_img" src="assets/images/waiting_room.png">
+            </div>
+            <h1 style="text-align: center;">Please wait</h1>
+            <h3>Your request is in progress</h3>
+        </div>
+        <div style="position: relative;left: 45%;" class="spinner-border" role="status">
+        </div>
+    </div>
+</div>

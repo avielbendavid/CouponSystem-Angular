@@ -1,0 +1,23 @@
+.oparation_btn {
+    height: 70px;
+    margin-top: 45px;
+    margin-left: 15px;
+    outline: none;
+}
+.example-container {
+    position: absolute;
+    /* width: 500px; */
+    height: 300px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+  }
+  
+  .example-sidenav-content {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .example-sidenav {
+    padding: 20px;
+  }

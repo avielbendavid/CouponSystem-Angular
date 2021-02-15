@@ -1,0 +1,3 @@
+export enum Item{
+    COMPANY="COMPANY",COUPON="COUPON",CUSTOMER="CUSTOMER"
+}

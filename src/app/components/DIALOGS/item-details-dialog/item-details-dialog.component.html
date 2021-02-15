@@ -1,0 +1,46 @@
+<div *ngIf="customer">
+    <h3 mat-dialog-title style="text-align: center;">
+        CUSTOMER Details:
+    </h3>
+    <mat-dialog-content>
+        <p> <label>CUSTOMER ID:</label> {{customer.id}}</p>
+        <p><label>First-Name:</label> {{customer.firstName}}</p>
+        <p><label>Last-Name:</label> {{customer.lastName}}</p>
+        <p> <label>Email-Address:</label> {{customer.email}}</p>
+        <p> <label>Password:</label> {{customer.password}}</p>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+        <button mat-button mat-dialog-close>CLOSE</button>
+    </mat-dialog-actions>
+</div>
+<div *ngIf="coupon">
+    <h3 mat-dialog-title style="text-align: center;">
+        COUPON Details:
+    </h3>
+    <mat-dialog-content>
+        <p> <label>COUPON ID:</label> {{coupon.id}}</p>
+        <p> <label>Category:</label> {{coupon.category}}</p>
+        <p> <label>Title:</label> {{coupon.title}}</p>
+        <p> <label>Start-Date:</label> {{coupon.startDate}}</p>
+        <p> <label>End-Date:</label> {{coupon.endDate}}</p>
+        <p> <label>Amount:</label> {{coupon.amount}}</p>
+        <p> <label>Price:</label> {{coupon.price}}</p>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+        <button mat-button mat-dialog-close>CLOSE</button>
+    </mat-dialog-actions>
+</div>
+<div *ngIf="company">
+    <h3 mat-dialog-title style="text-align: center;">
+        Company Details:
+    </h3>
+    <mat-dialog-content>
+        <p> <label>Company ID:</label> {{company.id}}</p>
+        <p><label>Name:</label> {{company.name}}</p>
+        <p> <label>Email-Address:</label> {{company.email}}</p>
+        <p> <label>Password:</label> {{company.password}}</p>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+        <button mat-button mat-dialog-close>CLOSE</button>
+    </mat-dialog-actions>
+</div>

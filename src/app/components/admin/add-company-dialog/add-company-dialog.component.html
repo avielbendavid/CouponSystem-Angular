@@ -1,0 +1,54 @@
+<div style="padding: 25px;">
+    <form [formGroup]="addCompanyFormGroup" autocomplete="off">
+        <h2>Add Company</h2>
+        <label>Name</label>
+        <input class="dialog_input" [ngClass]="{wrong_detail_input:
+                (addCompanyFormGroup.controls.name.errors?.required&&addCompanyFormGroup.controls.name.touched)||
+                (addCompanyFormGroup.controls.name.errors?.required&&addCompanyFormGroup.controls.name.touched)}"
+            formControlName="name" type="text" placeholder="Name...">
+        <br>
+        <span
+            *ngIf="this.addCompanyFormGroup.controls.name.errors?.required&&this.addCompanyFormGroup.controls.name.touched"
+            class="wrong_detail_span">*Please enter a name</span>
+        <span
+            *ngIf="this.addCompanyFormGroup.controls.name.errors?.pattern&&this.addCompanyFormGroup.controls.name.touched"
+            class="wrong_detail_span">*Name must start with capital</span>
+        <br>
+        <label>Pssword</label>
+        <input class="dialog_input"
+            [ngClass]="{wrong_detail_input:
+                (addCompanyFormGroup.controls.password.errors?.required&&addCompanyFormGroup.controls.password.touched)||
+                (addCompanyFormGroup.controls.password.errors?.minlength&&addCompanyFormGroup.controls.password.touched)||
+                (addCompanyFormGroup.controls.password.errors?.maxlength&&addCompanyFormGroup.controls.password.touched)}"
+            formControlName="password" type="password" placeholder="Pssword...">
+        <br>
+        <span
+            *ngIf="this.addCompanyFormGroup.controls.password.errors?.required&&this.addCompanyFormGroup.controls.password.touched"
+            class="wrong_detail_span">*Please enter a password</span>
+        <span
+            *ngIf="this.addCompanyFormGroup.controls.password.errors?.minlength&&this.addCompanyFormGroup.controls.password.touched"
+            class="wrong_detail_span">*Please enter min 5 characters</span>
+        <span
+            *ngIf="this.addCompanyFormGroup.controls.password.errors?.maxlength&&this.addCompanyFormGroup.controls.password.touched"
+            class="wrong_detail_span">*Please enter max 8 characters</span>
+        <br>
+        <label>Email-Address</label>
+        <input class="dialog_input" [ngClass]="{wrong_detail_input:
+                (addCompanyFormGroup.controls.email.errors?.required&&addCompanyFormGroup.controls.email.touched)||
+                (addCompanyFormGroup.controls.email.errors?.email&&addCompanyFormGroup.controls.email.touched)}"
+            formControlName="email" type="email" placeholder="Email-Address...">
+        <br>
+        <span
+            *ngIf="this.addCompanyFormGroup.controls.email.errors?.required&&this.addCompanyFormGroup.controls.email.touched"
+            class="wrong_detail_span">*Please enter email address</span>
+        <span
+            *ngIf="this.addCompanyFormGroup.controls.email.errors?.email&&this.addCompanyFormGroup.controls.email.touched"
+            class="wrong_detail_span">*Please enter valid email</span>
+        <br>
+        <div class="dialog_btn_div">
+            <button class="dialog_btn" (click)="addCompany()"
+                [disabled]="addCompanyFormGroup.invalid">ADD</button>
+            <button mat-dialog-close class="dialog_btn">CLOSE</button>
+        </div>
+    </form>
+</div>

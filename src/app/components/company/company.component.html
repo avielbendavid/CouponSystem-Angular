@@ -1,0 +1,45 @@
+<div>
+    <button class="oparation_btn" (click)="openAddCouponDialog()">Add Coupon</button>
+</div>
+<input #maxPrice type="number">
+<button (click)="searchByMaxPrice(maxPrice)">Click</button>
+
+<mat-form-field style="margin-right: 50px; width: 150px;">
+    <mat-label>Category</mat-label>
+    <mat-select placeholder="Category" #category>
+        <mat-option *ngFor="let opt of categories|keyvalue" [value]="opt.value">{{opt.value}}</mat-option>
+    </mat-select>
+</mat-form-field>
+
+<button (click)="searchByCategory(category)">Click</button>
+
+<!-- <mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+      <p>Auto-resizing sidenav</p>
+      <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
+      <button (click)="showFiller = !showFiller" mat-raised-button>
+        Toggle extra text
+      </button>
+    </mat-drawer>
+  
+    <div class="example-sidenav-content">
+      <button type="button" mat-button (click)="drawer.toggle()">
+        Toggle sidenav
+      </button>
+    </div>
+  </mat-drawer-container> -->
+<app-coupons-table (refreshTable)="refresh()" (deleteCouponById)="deleteCoupon($event)"
+    [couponsTableData]="couponsTableData" [couponsTableColumn]="couponsTabelColumn"></app-coupons-table>
+<div *ngIf="!couponsTableData" style="width: 500px;
+position: relative;
+left: 50%;
+transform: translateX(-50%);
+top: 50px;
+display: flex;
+flex-direction: column;
+justify-content: space-around;
+align-items: center;
+height: 150px;">
+    <div>Please wait , Your request is in progress...</div>
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+</div>

@@ -1,0 +1,19 @@
+<!-- <div style="position: relative;"> -->
+    <!-- <img [routerLink]="'/home'" [fragment]="'couponsTable'" class="aabb" src="assets/images/purchaseCoupon.png" > -->
+<!-- </div> -->
+<input #maxPrice type="number">
+<button (click)="searchByMaxPrice(maxPrice);">Click</button>
+<button mat-fab matTooltip="purchase coupon!" 
+style="margin: 20px;position: absolute;right: 20px;    height: 90px;
+width: 90px;font-size: 25px;background-color: rgb(156, 73, 142);" 
+class="purchaseNewCouponBtn" [routerLink]="'/home'" [fragment]="'couponsTable'"><img width="40px" src="assets/images/buy.png"></button>
+
+<mat-form-field style="margin-right: 50px; width: 150px;">
+    <mat-label>Category</mat-label>
+    <mat-select placeholder="Category" #category>
+        <mat-option *ngFor="let opt of categories|keyvalue" [value]="opt.value">{{opt.value}}</mat-option>
+    </mat-select>
+</mat-form-field>
+<button (click)="searchByCategory(category);">Click</button>
+<app-coupons-table [couponsTableColumn]="this.couponsTableColumn" [couponsTableData]="this.couponsTableData">
+</app-coupons-table>

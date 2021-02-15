@@ -1,0 +1,64 @@
+<div style="border-radius: 8px; color: rgb(255, 255, 255);font-size: 50px;height: 300px;
+background: url(/assets/images/aaa.PNG);">
+    <span style="margin-left: 15px;">
+        Update Coupon
+    </span>
+</div>
+<div style="padding: 20px;display: flex;flex-direction: column;">
+    <form autocomplete="on"
+        style="height: 80%;  display: flex;  flex-direction: column;  justify-content: space-around;"
+        [formGroup]="editCouponFormGroup">
+        <div>
+            <mat-form-field style="margin-right: 50px; width: 150px;">
+                <mat-label>Category</mat-label>
+                <mat-select formControlName="category" required placeholder="Category">
+                    <mat-option *ngFor="let opt of categories|keyvalue" [value]="opt.value">{{opt.value}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field style="margin-right: 50px;">
+                <mat-label>Title</mat-label>
+                <input required matInput  placeholder="Title" formControlName="title">
+            </mat-form-field>
+
+            <mat-form-field style="margin-right: 50px; width: 300px;">
+                <mat-label>Description</mat-label>
+                <input required matInput formControlName="description" placeholder="Description">
+            </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field style="margin-right: 50px;">
+                <input matInput [matDatepicker]="myDatePicker1" formControlName="startDate" placeholder="Start-Date"
+                    required>
+                <mat-datepicker-toggle [for]="myDatePicker1" matSuffix></mat-datepicker-toggle>
+                <mat-datepicker #myDatePicker1></mat-datepicker>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput [matDatepicker]="myDatePicker2" formControlName="endDate" placeholder="End-Date" required>
+                <mat-datepicker-toggle [for]="myDatePicker2" matSuffix></mat-datepicker-toggle>
+                <mat-datepicker #myDatePicker2></mat-datepicker>
+            </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field appearance="outline" style="margin-right: 50px;">
+                <mat-label>Amount</mat-label>
+                <input required matInput formControlName="amount" type="number" class="example-right-align">
+                <span matPrefix>$&nbsp;</span>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" style="margin-right: 50px;">
+                <mat-label>Price</mat-label>
+                <input  required matInput formControlName="price" type="number" placeholder="Price">
+            </mat-form-field>
+        </div>
+
+        <div style="display: flex;justify-content: space-between;">
+            <button [disabled]="this.editCouponFormGroup.invalid" (click)="updateCoupon()"
+                style="height: 50px; width: 100px;outline: none;border-radius: 6px;">UPDATE</button>
+            <button mat-dialog-close
+                style="height: 50px; width: 100px;outline: none;border-radius: 6px;">CANCEL</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,28 @@
+<div style="text-align: center;">
+    <input class="aa" type="search" placeholder="Search for a coupon" aria-label="Search">
+</div>
+<h2 *ngIf="!isCompany" style="margin-left: 160px; display: inline;color: #874dc1;">My Coupons</h2>
+<table>
+    <thead>
+        <tr>
+            <th *ngFor="let column of couponsTableColumn">{{column}}</th>
+            <th *ngIf="isCompany">DELETE / EDIT</th>
+        </tr>
+        <tr id="content_tr" *ngFor="let data of couponsTableData">
+            <td (click)="openItemDialog(data)" id="td_id">{{data.id}}</td>
+            <td (click)="openItemDialog(data)">{{data.category}}</td>
+            <td (click)="openItemDialog(data)">{{data.title}}</td>
+            <td (click)="openItemDialog(data)">{{data.description}}</td>
+            <td (click)="openItemDialog(data)">{{data.startDate}}</td>
+            <td (click)="openItemDialog(data)">{{data.endDate}}</td>
+            <td (click)="openItemDialog(data)">{{data.amount}}</td>
+            <td (click)="openItemDialog(data)">{{data.price}}</td>
+            <td (click)="openItemDialog(data)">{{data.company.name}}</td>
+            <td *ngIf="isCompany">
+                <div class="operations_icons">
+                    <img (click)="openDeleteDialog(data.id)" src="assets/images/delete_icon.png"><img (click)="openEditDialog(data)" src="assets/images/edit_icon.png">
+                </div>
+            </td>
+        </tr>
+    </thead>
+</table>

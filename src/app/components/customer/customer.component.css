@@ -1,0 +1,19 @@
+/* .aabb{
+    width: 300px;
+    position: absolute;
+    border: 1px solid #ccd1d5;
+    cursor: pointer;
+    border-radius: 6px;
+    right: 20px;
+    box-shadow: 5px 5px 5px #bdbbce;
+    top: 25px;
+    outline: none;
+    transition: bax-shadow 0.5s;
+}
+.aabb:hover{
+    box-shadow: 5px 8px 15px #787594;
+} */
+
+.purchaseNewCouponBtn{
+    border: none;
+}

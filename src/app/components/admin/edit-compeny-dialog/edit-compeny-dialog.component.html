@@ -1,0 +1,37 @@
+<div>
+    <form [formGroup]="editCompanyFormGroup">
+        <h2>Edit Company</h2>
+        <label>Name</label>
+        <span>{{company.name}}</span>
+        <br>
+        <label>Pssword</label>
+        <input #companyPassword class="dialog_input" [ngClass]="{wrong_detail_input:(editCompanyFormGroup.controls.password.errors?.required&&this.editCompanyFormGroup.controls.password.touched)||
+                (editCompanyFormGroup.controls.password.errors?.minlength)||
+                (editCompanyFormGroup.controls.password.errors?.maxlength)
+            }" formControlName="password" type="password" placeholder="Pssword...">
+        <br>
+        <span *ngIf="editCompanyFormGroup.controls.password.errors?.required" class="wrong_detail_span">*Please enter a
+            password</span>
+        <span *ngIf="editCompanyFormGroup.controls.password.errors?.maxlength" class="wrong_detail_span">*Max charecters
+            : 8</span>
+        <span *ngIf="editCompanyFormGroup.controls.password.errors?.minlength" class="wrong_detail_span">*Min charecters
+            : 5</span>
+        <br>
+        <label>Email-Address</label>
+        <input  #companyEmail class="dialog_input" [ngClass]="{wrong_detail_input:(editCompanyFormGroup.controls.email.errors?.required&&this.editCompanyFormGroup.controls.email.touched)||
+            (editCompanyFormGroup.controls.email.errors?.email)}" formControlName="email" type="email"
+            placeholder="Email-Address...">
+        <br>
+        <span *ngIf="editCompanyFormGroup.controls.email.errors?.required" class="wrong_detail_span">*Please enter
+            email</span>
+        <span *ngIf="editCompanyFormGroup.controls.email.errors?.email" class="wrong_detail_span">*Please enter valid
+            email</span>
+        <br>
+        <br>
+        <div class="dialog_btn_div">
+            <button mat-dialog-close class="dialog_btn" (click)="editCompany(companyPassword,companyEmail)"
+                [disabled]="editCompanyFormGroup.invalid">SAVE</button>
+            <button mat-dialog-close class="dialog_btn">CLOSE</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,15 @@
+.info_div{
+    display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            margin-left: 150px;
+}
+.wrong_detail {
+    border: 2px solid red;
+    border-radius: .25rem;
+    box-shadow: 2px 1px 7px red;
+    transition: box-shadow 0.5s;
+}
+.addCompanyBtn:hover{
+    border: none;
+}

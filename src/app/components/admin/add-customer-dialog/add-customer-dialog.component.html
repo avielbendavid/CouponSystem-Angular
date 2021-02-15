@@ -1,0 +1,26 @@
+<div >
+    <form [formGroup]="addCustomerFormGroup">
+        <h2>Add Customer</h2>
+        <label>First-Name</label>
+        <input class="dialog_input" formControlName="firstName" type="text" placeholder="First-Name...">
+        <br>
+        <br>
+        <label>Last-Name</label>
+        <input class="dialog_input" formControlName="lastName" type="text" placeholder="Last-Name...">
+        <br>
+        <br>
+        <label>Email-Address</label>
+        <input class="dialog_input" formControlName="email" type="email" placeholder="Email-Address...">
+        <br>
+        <br>
+        <label>Password</label>
+        <input class="dialog_input" formControlName="password" type="password" placeholder="Pssword...">
+        <br>
+        <br>
+        <div class="dialog_btn_div">
+            <button  style="height: 35px; width: 80px;" 
+              [disabled]="addCustomerFormGroup.invalid" (click)="addCustomer()">ADD</button>
+            <button mat-dialog-close style="height: 35px; width: 80px;">CLOSE</button>
+        </div>
+    </form>
+</div>

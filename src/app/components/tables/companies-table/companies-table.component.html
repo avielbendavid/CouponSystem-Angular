@@ -1,0 +1,27 @@
+<!-- אני מגדירה טבלה
+אני צריכה לקבל את העמודות של הטבלה מבחוץ
+אני צריכה לקבל את המידע של הטבלה מבחוץ
+אני צריכה להוציא את הרשומה שעליה לחצו -->
+<div style="text-align: center;">
+    <input [(ngModel)]="searchValue" class="aa" type="search" placeholder="Search for a company"
+        aria-label="Search">
+</div>
+<table>
+    <thead>
+        <tr>
+            <th *ngFor="let column of companiesTableColumn">{{column}}</th>
+        </tr>
+        <tr id="content_tr" *ngFor="let data of companiesTableData | adminCompaniesFilter:searchValue">
+            <td id="td_id" (click)="openItemDetailsDialog(data.id)">{{data.id}}</td>
+            <td> {{data.name}} </td>
+            <td> {{data.email}} </td>
+            <td> {{data.password}} </td>
+            <td>
+                <div class="operations_icons">
+                    <img (click)="openDeleteDialog(data.id)" src="assets/images/delete_icon.png">
+                    <img (click)="openEditCompoanyDialog(data.id)" src="assets/images/edit_icon.png">
+                </div>
+            </td>
+        </tr>
+    </thead>
+</table>
