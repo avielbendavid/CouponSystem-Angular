@@ -1,5 +1,5 @@
 <mat-tab-group mat-align-tabs="center">
-    <mat-tab label="COMPANIES">
+    <mat-tab label="COMPANIES-AVIEL">
         <button mat-fab matTooltip="Add new company" style="margin: 20px;position: relative;left: 20px;top: 50px;font-size: 25px;background-color: rgb(156, 73, 142);" class="addCompanyBtn" (click)="openAddCompanyDialog()" >+</button>
         <app-companies-table (deleteCompanyById)="deleteCompany($event)" (refreshTable)="refreshCompaniesTable()"
             *ngIf="!loading" [companiesTableColumn]="companiesTabelColumn" [companiesTableData]="companiesTableData">
