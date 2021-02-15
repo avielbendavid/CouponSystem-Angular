@@ -6,7 +6,7 @@
     <thead>
         <tr>
             <th *ngFor="let column of couponsTableColumn">{{column}}</th>
-            <th *ngIf="isCompany">DELETE / EDITss</th>
+            <th *ngIf="isCompany">DELETE / EDIT</th>
         </tr>
         <tr id="content_tr" *ngFor="let data of couponsTableData">
             <td (click)="openItemDialog(data)" id="td_id">{{data.id}}</td>
