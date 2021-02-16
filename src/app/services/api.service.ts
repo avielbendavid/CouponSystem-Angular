@@ -106,7 +106,7 @@ export class ApiService {
 
   public purchaseCoupon(coupon: Coupon) {
     const httpHeaders = new HttpHeaders({ token: localStorage.getItem("token") });
-    return this.httpClient.post("http://localhost:8080/api/customer/purchase-coupon", coupon,{headers:httpHeaders,responseType:'text'});
+    return this.httpClient.post("http://localhost:8080/api/customer/purchase-coupon", coupon, { headers: httpHeaders, responseType: 'text' });
   }
   public getCustomerCoupons(): Observable<Coupon[]> {
     const httpHeaders = new HttpHeaders({ token: localStorage.getItem("token") });
@@ -126,6 +126,14 @@ export class ApiService {
   public getAllCoupons(): Observable<Coupon[]> {
     return this.httpClient.get<Coupon[]>("http://localhost:8080/home/get-all-coupons");
   }
+
+  // *************************************** Log-out API  ***************************************
+  logOut(token: string) {
+    return this.httpClient.post("http://localhost:8080/login/log-out/" + token, null, { responseType: 'text' });
+  }
+
+
+
 
 
 }
