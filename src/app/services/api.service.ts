@@ -131,9 +131,5 @@ export class ApiService {
   logOut(token: string) {
     return this.httpClient.post("http://localhost:8080/login/log-out/" + token, null, { responseType: 'text' });
   }
-
-
-
-
-
+  
 }
