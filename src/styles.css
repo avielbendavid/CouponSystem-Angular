@@ -188,3 +188,16 @@ body {
     color: red;
     top: 5px;
 }
+
+.addTableItem {
+    margin: 20px;
+    position: relative;
+    left: 20px;
+    top: 145px;
+    font-size: 25px;
+    background-color: rgb(140 136 178);
+}
+
+.addTableItem:hover {
+    border: none;
+}

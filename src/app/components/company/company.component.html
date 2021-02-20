@@ -1,6 +1,5 @@
-<div>
-    <button class="oparation_btn" (click)="openAddCouponDialog()">Add Coupon</button>
-</div>
+<button mat-fab matTooltip="Add new Coupon" class="addTableItem" (click)="openAddCouponDialog()">+</button>
+
 <input #maxPrice type="number">
 <button (click)="searchByMaxPrice(maxPrice)">Click</button>
 
