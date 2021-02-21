@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { Local } from 'protractor/built/driverProviders';
 import { Category } from 'src/app/enums/category.enum';
 import { Coupon } from 'src/app/models/coupon.model';
 import { ApiService } from 'src/app/services/api.service';
 import { ErrorService } from 'src/app/services/error.service';
+import { ResponseDialogComponent } from '../../DIALOGS/response-dialog/response-dialog.component';
 
 @Component({
   selector: 'app-add-coupon-dialog',
@@ -18,7 +19,12 @@ export class AddCouponDialogComponent implements OnInit {
   addcouponFormGroup: FormGroup;
   coupon: Coupon = new Coupon();
 
-  constructor(private fb: FormBuilder, private apiService: ApiService, private dialogRef: MatDialogRef<AddCouponDialogComponent>, private errService: ErrorService) { }
+  constructor(private fb: FormBuilder,
+     private apiService: ApiService, 
+     private dialogRef: MatDialogRef<AddCouponDialogComponent>, 
+     private errService: ErrorService,
+     private dialog:MatDialog
+     ) { }
 
   ngOnInit(): void {
     this.addcouponFormGroup = this.fb.group({
@@ -49,7 +55,7 @@ export class AddCouponDialogComponent implements OnInit {
 
     this.apiService.addCoupon(this.coupon).subscribe(
       (response) => {
-        console.log(response); alert(response);
+        this.dialog.open(ResponseDialogComponent,{width:'500px',data:{response:'success',message:response}});
         this.dialogRef.close(true);
       },
       (error) => { this.errService.errorHandler(error) });

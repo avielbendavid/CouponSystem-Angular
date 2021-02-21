@@ -1,15 +1,18 @@
-<!-- 
-<input #maxPrice type="number">
-<button (click)="searchByMaxPrice(maxPrice)">Click</button>
-
-<mat-form-field style="margin-right: 50px; width: 150px;">
-  <mat-label>Category</mat-label>
-  <mat-select placeholder="Category" #category>
-    <mat-option *ngFor="let opt of categories|keyvalue" [value]="opt.value">{{opt.value}}</mat-option>
-  </mat-select>
-</mat-form-field>
-
-<button (click)="searchByCategory(category)">Click</button> -->
+<div style="position: absolute;margin-left: 30px;margin-top: 15px;">
+  <span style="width: 225px;">
+    <input #maxPrice  type="number" placeholder="search coupons by max price">
+  </span>
+  <button (click)="searchByMaxPrice(maxPrice)" style="width: 50px; outline: none;">Click</button>
+  <br>
+  <mat-form-field>
+    <span>
+      <mat-select placeholder="Category" #category>
+        <mat-option *ngFor="let opt of categories|keyvalue" [value]="opt.value">{{opt.value}}</mat-option>
+      </mat-select>
+    </span>
+  </mat-form-field>
+  <button (click)="searchByCategory(category)" style="width: 50px; outline: none;">Click</button>
+</div>
 
 <button mat-fab matTooltip="Add new Coupon" class="addTableItem" (click)="openAddCouponDialog()">+</button>
 <app-coupons-table (refreshTable)="refresh()" (deleteCouponById)="deleteCoupon($event)"

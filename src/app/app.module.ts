@@ -32,6 +32,7 @@ import { ItemDetailsDialogComponent } from './components/DIALOGS/item-details-di
 import { EditCouponDialogComponent } from './components/company/edit-coupon-dialog/edit-coupon-dialog.component';
 import { ResponseDialogComponent } from './components/DIALOGS/response-dialog/response-dialog.component';
 import { ResponseComponent } from './components/response/response.component';
+import { CouponsFilterPipe } from './pipes/coupons-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { ResponseComponent } from './components/response/response.component';
     CouponsTableComponent,
     ThumbnailComponent,
     HomeCouponsFilterPipe,
+    CouponsFilterPipe,
     AdminCompaniesFilterPipe,
     AdminCustomersFilterPipe,
     CouponDetailsDialogComponent,

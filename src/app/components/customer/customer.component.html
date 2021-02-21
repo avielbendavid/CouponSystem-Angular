@@ -1,22 +1,22 @@
-<!-- <div style="position: relative;"> -->
-<!-- <img [routerLink]="'/home'" [fragment]="'couponsTable'" class="aabb" src="assets/images/purchaseCoupon.png" > -->
-<!-- </div> -->
-<input #maxPrice type="number">
-<button (click)="searchByMaxPrice(maxPrice);">Click</button>
-<button mat-fab matTooltip="purchase coupon!" style="margin: 20px;
-position: absolute;
-right: 20px;   
- height: 90px;
-width: 90px;
-font-size: 25px;background-color: rgb(140 136 178);" class="purchaseNewCouponBtn" [routerLink]="'/home'"
-    [fragment]="'couponsTable'"><img width="40px" src="assets/images/buy.png"></button>
+<div style="display: flex;justify-content: space-between;align-items: center; margin: 40px;">
+    
+    <div>
+        
+        <input #maxPrice type="number">
+        <button (click)="searchByMaxPrice(maxPrice);">Click</button>
+        <mat-form-field>
+            <mat-select placeholder="Category" #category>
+                <mat-option *ngFor="let opt of categories|keyvalue" [value]="opt.value">{{opt.value}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <button (click)="searchByCategory(category);">Click</button>
+    </div>
+    <div>
+    
+        <button mat-fab matTooltip="purchase coupon!" class="purchaseNewCouponBtn" [routerLink]="'/home'"
+            [fragment]="'couponsTable'"><img width="40px" src="assets/images/buy.png"></button>
+    </div>
+</div>
 
-<mat-form-field style="margin-right: 50px; width: 150px;">
-    <mat-label>Category</mat-label>
-    <mat-select placeholder="Category" #category>
-        <mat-option *ngFor="let opt of categories|keyvalue" [value]="opt.value">{{opt.value}}</mat-option>
-    </mat-select>
-</mat-form-field>
-<button (click)="searchByCategory(category);">Click</button>
 <app-coupons-table [couponsTableColumn]="this.couponsTableColumn" [couponsTableData]="this.couponsTableData">
 </app-coupons-table>

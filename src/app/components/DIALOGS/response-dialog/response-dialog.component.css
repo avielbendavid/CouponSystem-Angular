@@ -1,3 +1,9 @@
+.close_btn_div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .close_btn {
     outline: none;
 }

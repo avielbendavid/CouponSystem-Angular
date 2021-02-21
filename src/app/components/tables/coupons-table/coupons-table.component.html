@@ -1,5 +1,5 @@
 <div style="text-align: center;">
-    <input class="aa" type="search" placeholder="Search for a coupon" aria-label="Search">
+    <input [(ngModel)]="searchValue" class="aa" type="search" placeholder="Search for a coupon" aria-label="Search">
 </div>
 <h2 *ngIf="!isCompany" style="margin-left: 160px; display: inline;color: #874dc1;">My Coupons</h2>
 <table>
@@ -8,7 +8,7 @@
             <th *ngFor="let column of couponsTableColumn">{{column}}</th>
             <th *ngIf="isCompany">DELETE / EDIT</th>
         </tr>
-        <tr id="content_tr" *ngFor="let data of couponsTableData">
+        <tr id="content_tr" *ngFor="let data of couponsTableData  | couponsFilter : searchValue">
             <td (click)="openItemDialog(data)" id="td_id">{{data.id}}</td>
             <td (click)="openItemDialog(data)">{{data.category}}</td>
             <td (click)="openItemDialog(data)">{{data.title}}</td>

@@ -19,6 +19,8 @@ export class CouponsTableComponent implements OnInit {
   @Output() deleteCouponById: EventEmitter<number> = new EventEmitter<number>();
   @Output() refreshTable:EventEmitter<boolean> = new EventEmitter<boolean>();
   isCompany:boolean=false;
+  searchValue: string;
+
 
   constructor(
     private dialog: MatDialog,
