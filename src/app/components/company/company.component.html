@@ -1,32 +1,17 @@
-<button mat-fab matTooltip="Add new Coupon" class="addTableItem" (click)="openAddCouponDialog()">+</button>
-
+<!-- 
 <input #maxPrice type="number">
 <button (click)="searchByMaxPrice(maxPrice)">Click</button>
 
 <mat-form-field style="margin-right: 50px; width: 150px;">
-    <mat-label>Category</mat-label>
-    <mat-select placeholder="Category" #category>
-        <mat-option *ngFor="let opt of categories|keyvalue" [value]="opt.value">{{opt.value}}</mat-option>
-    </mat-select>
+  <mat-label>Category</mat-label>
+  <mat-select placeholder="Category" #category>
+    <mat-option *ngFor="let opt of categories|keyvalue" [value]="opt.value">{{opt.value}}</mat-option>
+  </mat-select>
 </mat-form-field>
 
-<button (click)="searchByCategory(category)">Click</button>
+<button (click)="searchByCategory(category)">Click</button> -->
 
-<!-- <mat-drawer-container class="example-container" autosize>
-    <mat-drawer #drawer class="example-sidenav" mode="side">
-      <p>Auto-resizing sidenav</p>
-      <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
-      <button (click)="showFiller = !showFiller" mat-raised-button>
-        Toggle extra text
-      </button>
-    </mat-drawer>
-  
-    <div class="example-sidenav-content">
-      <button type="button" mat-button (click)="drawer.toggle()">
-        Toggle sidenav
-      </button>
-    </div>
-  </mat-drawer-container> -->
+<button mat-fab matTooltip="Add new Coupon" class="addTableItem" (click)="openAddCouponDialog()">+</button>
 <app-coupons-table (refreshTable)="refresh()" (deleteCouponById)="deleteCoupon($event)"
     [couponsTableData]="couponsTableData" [couponsTableColumn]="couponsTabelColumn"></app-coupons-table>
 <div *ngIf="!couponsTableData" style="width: 500px;
