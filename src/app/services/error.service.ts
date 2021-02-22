@@ -3,15 +3,17 @@ import { Injectable } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { ResponseDialogComponent } from '../components/DIALOGS/response-dialog/response-dialog.component';
+import { ApplicationService } from './application.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ErrorService {
 
-  constructor(private router: Router, private dialog: MatDialog) { }
+  constructor(private router: Router, private dialog: MatDialog, private appService: ApplicationService) { }
 
   errorHandler(error: HttpErrorResponse) {
+    this.appService.refresh();
     if (error.status == 401) {
       console.log(error);
       if (error.error.message == undefined) {
@@ -21,12 +23,12 @@ export class ErrorService {
       else {
         this.dialog.open(ResponseDialogComponent, { width: '550px', data: { response: 'fail', message: error.error.message }, panelClass: 'err_dialog', backdropClass: 'dark' });
       }
-      this.router.navigate(['/response/'+error.status]);
+      this.router.navigate(['/response/' + error.status]);
       return;
     }
     if (error.status == 0) {
       this.dialog.open(ResponseDialogComponent, { width: '550px', data: { response: 'fail', message: 'Sorry, Connection was Refused.Please try again later...' }, panelClass: 'err_dialog', backdropClass: 'dark' });
-      this.router.navigate(['/response/'+error.status]);
+      this.router.navigate(['/response/' + error.status]);
       return;
     }
     console.log(error);

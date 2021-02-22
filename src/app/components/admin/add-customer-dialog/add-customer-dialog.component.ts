@@ -26,10 +26,10 @@ export class AddCustomerDialogComponent implements OnInit {
 
   ngOnInit(): void {
     this.addCustomerFormGroup = this.fb.group({
-      firstName: ['', Validators.required],
-      lastName: ['', [Validators.required]],
+      firstName: ['', [Validators.required,Validators.pattern('^([A-Z][a-z]*)')]],
+      lastName: ['', [Validators.required,Validators.pattern('^([A-Z][a-z]*)')]],
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.maxLength(8), Validators.minLength(5)]]
+      password: ['', [Validators.required, Validators.minLength(5),Validators.maxLength(8),]]
     });
   }
 

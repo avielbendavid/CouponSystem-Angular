@@ -98,7 +98,7 @@ export class AdminComponent implements OnInit {
   }
 
   openAddCustomerDialog() {
-    this.dialog.open(AddCustomerDialogComponent).afterClosed().subscribe(
+    this.dialog.open(AddCustomerDialogComponent,{width:'480px',backdropClass:'dark', panelClass: 'ggg'}).afterClosed().subscribe(
       (renewTable) => {
         if (renewTable) { this.refreshCustomersTable(); }
       });

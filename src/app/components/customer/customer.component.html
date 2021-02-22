@@ -1,13 +1,14 @@
 <div class="opt_container">
     <div>
-        <input #maxPrice type="number">
-        <button (click)="searchByMaxPrice(maxPrice);">Click</button>
+        <input #maxPrice type="number" placeholder="search by max price">
+        <button (click)="searchByMaxPrice(maxPrice);" class="filter_btn">Search</button>
+        <br>
         <mat-form-field>
-            <mat-select placeholder="Category" #category>
+            <mat-select placeholder="search by category" #category>
                 <mat-option *ngFor="let opt of categories|keyvalue" [value]="opt.value">{{opt.value}}</mat-option>
             </mat-select>
         </mat-form-field>
-        <button (click)="searchByCategory(category);">Click</button>
+        <button (click)="searchByCategory(category);" class="filter_btn">Search</button>
     </div>
     <div>
         <button mat-fab matTooltip="purchase coupon!" class="purchaseNewCouponBtn" [routerLink]="'/home'"
@@ -16,3 +17,7 @@
 </div>
 <app-coupons-table [couponsTableColumn]="this.couponsTableColumn" [couponsTableData]="this.couponsTableData">
 </app-coupons-table>
+<div *ngIf="!couponsTableData" id="wait_progress_div">
+    <div>Please wait , Your request is in progress...</div>
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  </div>

@@ -36,21 +36,25 @@ export class CustomerComponent implements OnInit {
   searchByCategory(element: MatSelect) {
     this.couponsTableData = null;
     const category: Category = element.value;
-    this.apiService.getCustomerCouponsByCategory(category).subscribe(
-      (coupons) => { this.couponsTableData = coupons },
-      (error) => { this.errorService.errorHandler(error); }
-    );
+    setTimeout(() => {
+      this.apiService.getCustomerCouponsByCategory(category).subscribe(
+        (coupons) => { this.couponsTableData = coupons },
+        (error) => { this.errorService.errorHandler(error); }
+      );
+    }, 3000);
   }
   searchByMaxPrice(element: HTMLInputElement) {
     this.couponsTableData = null;
     const maxPrice: number = Number(element.value);
-    this.apiService.getCustomerCouponsByMaxPrice(maxPrice).subscribe(
-      (coupons) => { this.couponsTableData = coupons },
-      (error) => {
-        console.log(error);
-        console.dir(error);
-        this.errorService.errorHandler(error);}
-    );
+    setTimeout(() => {
+      this.apiService.getCustomerCouponsByMaxPrice(maxPrice).subscribe(
+        (coupons) => { this.couponsTableData = coupons },
+        (error) => {
+          console.log(error);
+          console.dir(error);
+          this.errorService.errorHandler(error);}
+      );
+    }, 3000);
   }
 
 }

@@ -4,7 +4,8 @@
         <label>Name</label>
         <input class="dialog_input" [ngClass]="{wrong_detail_input:
                 (addCompanyFormGroup.controls.name.errors?.required&&addCompanyFormGroup.controls.name.touched)||
-                (addCompanyFormGroup.controls.name.errors?.required&&addCompanyFormGroup.controls.name.touched)}"
+                (addCompanyFormGroup.controls.name.errors?.pattern&&addCompanyFormGroup.controls.name.touched)
+            }"
             formControlName="name" type="text" placeholder="Name...">
         <br>
         <span

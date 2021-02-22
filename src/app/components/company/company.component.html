@@ -1,17 +1,17 @@
 <div id="search_options_div" >
   <span style="width: 225px;">
-    <input #maxPrice type="number" placeholder="search coupons by max price">
+    <input #maxPrice type="number" placeholder="search by max price">
   </span>
-  <button (click)="searchByMaxPrice(maxPrice)" style="width: 50px; outline: none;">Click</button>
+  <button (click)="searchByMaxPrice(maxPrice)" class="filter_btn">Search</button>
   <br>
   <mat-form-field>
     <span>
-      <mat-select placeholder="Category" #category>
+      <mat-select placeholder="search by category" #category>
         <mat-option *ngFor="let opt of categories|keyvalue" [value]="opt.value">{{opt.value}}</mat-option>
       </mat-select>
     </span>
   </mat-form-field>
-  <button (click)="searchByCategory(category)" style="width: 50px; outline: none;">Click</button>
+  <button (click)="searchByCategory(category)" class="filter_btn">Search</button>
 </div>
 
 <button mat-fab matTooltip="Add new Coupon" class="addTableItem" (click)="openAddCouponDialog()">+</button>

@@ -2,20 +2,59 @@
     <form [formGroup]="addCustomerFormGroup">
         <h2>Add Customer</h2>
         <label>First-Name</label>
-        <input class="dialog_input" formControlName="firstName" type="text" placeholder="First-Name...">
+        <input class="dialog_input" formControlName="firstName" type="text" placeholder="First-Name..."
+            [ngClass]="{wrong_detail_input:
+            (addCustomerFormGroup.controls.firstName.errors?.required&&addCustomerFormGroup.controls.firstName.touched)||
+            (addCustomerFormGroup.controls.firstName.errors?.pattern&&addCustomerFormGroup.controls.firstName.touched)}">
         <br>
+        <span
+            *ngIf="this.addCustomerFormGroup.controls.firstName.errors?.required&&this.addCustomerFormGroup.controls.firstName.touched"
+            class="wrong_detail_span">*Please enter first name</span>
+        <span
+            *ngIf="this.addCustomerFormGroup.controls.firstName.errors?.pattern&&this.addCustomerFormGroup.controls.firstName.touched"
+            class="wrong_detail_span">*FirstName must start with capital</span>
         <br>
         <label>Last-Name</label>
-        <input class="dialog_input" formControlName="lastName" type="text" placeholder="Last-Name...">
+        <input class="dialog_input" formControlName="lastName" type="text" placeholder="Last-Name..." [ngClass]="{wrong_detail_input:
+            (addCustomerFormGroup.controls.lastName.errors?.required&&addCustomerFormGroup.controls.lastName.touched)||
+            (addCustomerFormGroup.controls.lastName.errors?.pattern&&addCustomerFormGroup.controls.lastName.touched)}">
         <br>
+        <span
+            *ngIf="this.addCustomerFormGroup.controls.lastName.errors?.required&&this.addCustomerFormGroup.controls.lastName.touched"
+            class="wrong_detail_span">*Please enter last name</span>
+        <span
+            *ngIf="this.addCustomerFormGroup.controls.lastName.errors?.pattern&&this.addCustomerFormGroup.controls.lastName.touched"
+            class="wrong_detail_span">*LastName must start with capital</span>
         <br>
         <label>Email-Address</label>
-        <input class="dialog_input" formControlName="email" type="email" placeholder="Email-Address...">
+        <input class="dialog_input" formControlName="email" type="email" placeholder="Email-Address..."
+        [ngClass]="{wrong_detail_input:
+            (addCustomerFormGroup.controls.email.errors?.required&&addCustomerFormGroup.controls.email.touched)||
+            (addCustomerFormGroup.controls.email.errors?.email&&addCustomerFormGroup.controls.email.touched)}">
         <br>
+        <span
+            *ngIf="this.addCustomerFormGroup.controls.email.errors?.required&&this.addCustomerFormGroup.controls.email.touched"
+            class="wrong_detail_span">*Please enter email address</span>
+        <span
+            *ngIf="this.addCustomerFormGroup.controls.email.errors?.email&&this.addCustomerFormGroup.controls.email.touched"
+            class="wrong_detail_span">*Please enter valid email</span>
         <br>
         <label>Password</label>
-        <input class="dialog_input" formControlName="password" type="password" placeholder="Pssword...">
+        <input class="dialog_input" formControlName="password" type="password" placeholder="Pssword..."
+            [ngClass]="{wrong_detail_input:
+            (addCustomerFormGroup.controls.password.errors?.required&&addCustomerFormGroup.controls.password.touched)||
+            (addCustomerFormGroup.controls.password.errors?.minlength&&addCustomerFormGroup.controls.password.touched)||
+            (addCustomerFormGroup.controls.password.errors?.maxlength&&addCustomerFormGroup.controls.password.touched)}">
         <br>
+        <span
+            *ngIf="this.addCustomerFormGroup.controls.password.errors?.required&&this.addCustomerFormGroup.controls.password.touched"
+            class="wrong_detail_span">*Please enter a password</span>
+        <span
+            *ngIf="this.addCustomerFormGroup.controls.password.errors?.minlength&&this.addCustomerFormGroup.controls.password.touched"
+            class="wrong_detail_span">*Please enter min 5 characters</span>
+        <span
+            *ngIf="this.addCustomerFormGroup.controls.password.errors?.maxlength&&this.addCustomerFormGroup.controls.password.touched"
+            class="wrong_detail_span">*Please enter max 8 characters</span>
         <br>
         <div class="dialog_btn_div">
             <button class="dialog_btn" [disabled]="addCustomerFormGroup.invalid" (click)="addCustomer()">ADD</button>
