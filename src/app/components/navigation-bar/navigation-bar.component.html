@@ -1,24 +1,12 @@
 <header>
     <div>
-        <a routerLink="home"><img src="assets/images/LOGO.png" alt="" style="width: 50px; margin-left: 20px;"></a>
+        <a routerLink="home"><img src="assets/images/LOGO.png" style="width:50px; margin-left: 20px;"></a>
     </div>
-    <div id="menu_div" style="    display: flex;
-        position: relative;
-        top: 30%;
-        width: 250px;
-        justify-content: space-between;">
+    <div id="menu_div">
         <li> <a routerLink="home" routerLinkActive="active-link">HOME</a></li>
         <li><a routerLink="contact" routerLinkActive="active-link">CONTACT</a></li>
     </div>
-    <div style="    
-      /* background-color: rgb(255 255 255); */
-    padding: 15px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    /* border-radius: 18px; */
-    /* box-shadow: 0px 1px 10px #d0bdbd; */
-    ">
+    <div id="nav_menu">
         <div>
             <mat-menu #appMenu="matMenu">
                 <button routerLink="personal-zone" class="menu_btn" mat-menu-item>My-zone</button>
@@ -29,7 +17,7 @@
 
             <span *ngIf="!isActive" style="font-size: 16px;">hello {{userName}}</span>
         </div>
-        <button *ngIf="!isActive" style="margin-left: 15px;border-radius: 25px;" routerLink="login" type="button"
+        <button *ngIf="!isActive" routerLink="login" type="button"
             class="nav_btn">Login</button>
     </div>
 </header>

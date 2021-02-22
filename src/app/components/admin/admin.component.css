@@ -1,26 +1,4 @@
-.info_div {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    margin-left: 150px;
-}
-
-.wrong_detail {
-    border: 2px solid red;
-    border-radius: .25rem;
-    box-shadow: 2px 1px 7px red;
-    transition: box-shadow 0.5s;
-}
-
 .addTableItem {
     margin: 20px;
-    position: relative;
-    left: 20px;
-    top: 145px;
-    font-size: 25px;
     background-color: rgb(140 136 178);
-}
-
-.addTableItem:hover {
-    border: none;
 }

@@ -1,7 +1,5 @@
-<div style="display: flex;justify-content: space-between;align-items: center; margin: 40px;">
-    
+<div class="opt_container">
     <div>
-        
         <input #maxPrice type="number">
         <button (click)="searchByMaxPrice(maxPrice);">Click</button>
         <mat-form-field>
@@ -12,11 +10,9 @@
         <button (click)="searchByCategory(category);">Click</button>
     </div>
     <div>
-    
         <button mat-fab matTooltip="purchase coupon!" class="purchaseNewCouponBtn" [routerLink]="'/home'"
             [fragment]="'couponsTable'"><img width="40px" src="assets/images/buy.png"></button>
     </div>
 </div>
-
 <app-coupons-table [couponsTableColumn]="this.couponsTableColumn" [couponsTableData]="this.couponsTableData">
 </app-coupons-table>

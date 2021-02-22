@@ -1,0 +1,16 @@
+.card_body_span1{
+    text-align: center;
+}
+.card_a1{
+    width: 100%;
+    position: absolute;
+    background-color: #191919;
+    color: #ffffff;
+    text-align: center;
+    bottom: 0px;
+    outline: none;
+    bottom: 0px;
+    bottom: 0;
+    height: 15%;
+    border-radius: 0px 0px 25px 25px;
+}

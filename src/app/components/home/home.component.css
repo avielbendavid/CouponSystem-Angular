@@ -72,3 +72,23 @@ main {
     color: rgb(110, 12, 86);
 }
 
+#coupons_container {
+    min-height: 450px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    display: flex;
+    box-shadow: 5px 5px 15px rgb(156, 146, 146);
+    background-color: #ffffff;
+    max-width: 1200px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+#error_alert_message {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+    padding: 50px;
+    align-items: center;
+}

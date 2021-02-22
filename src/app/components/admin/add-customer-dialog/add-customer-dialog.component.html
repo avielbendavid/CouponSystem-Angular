@@ -1,4 +1,4 @@
-<div >
+<div>
     <form [formGroup]="addCustomerFormGroup">
         <h2>Add Customer</h2>
         <label>First-Name</label>
@@ -18,9 +18,8 @@
         <br>
         <br>
         <div class="dialog_btn_div">
-            <button  style="height: 35px; width: 80px;" 
-              [disabled]="addCustomerFormGroup.invalid" (click)="addCustomer()">ADD</button>
-            <button mat-dialog-close style="height: 35px; width: 80px;">CLOSE</button>
+            <button class="dialog_btn" [disabled]="addCustomerFormGroup.invalid" (click)="addCustomer()">ADD</button>
+            <button mat-dialog-close class="dialog_btn">CLOSE</button>
         </div>
     </form>
 </div>

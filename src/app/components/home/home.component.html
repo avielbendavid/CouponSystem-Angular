@@ -22,30 +22,20 @@
             </div>
         </div>
     </main>
-
     <div style=" padding: 20px;" id="content" #couponsTable>
         <div>
             <input [(ngModel)]="searchValue" type="search" class="aa" placeholder="Search for a coupon"
                 aria-label="Search">
         </div>
-        <div
-            style="min-height: 450px; margin-bottom: 20px; border-radius: 12px;display: flex;
-        box-shadow: 5px 5px 15px rgb(156, 146, 146); background-color: #ffffff; max-width: 1200px;flex-wrap: wrap;justify-content: space-evenly;">
-
+        <div id="coupons_container">
             <app-thumbnail (click)="openCouponDetailsDialog(coupon)"
                 *ngFor="let coupon of coupons | homeCouponsFilter :searchValue" [coupon]="coupon"></app-thumbnail>
             <span *ngIf="(coupons|homeCouponsFilter:searchValue).length==0">
-                <div style="display: flex;
-                flex-direction: column;
-                justify-content: space-evenly;
-                height: 100%;
-                padding: 50px;
-                align-items: center;">
+                <div id="error_alert_message">
                     <span style="font-size: 30px;">Sorry, we can't found what you are looking for...</span>
                     <img width="150px" src="assets/images/couponNotFound.png">
                 </div>
             </span>
         </div>
     </div>
-
 </section>
