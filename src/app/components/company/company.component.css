@@ -10,3 +10,18 @@
 .addTableItem:hover {
     border: none;
 }
+#wait_progress_div{
+  width: 500px;
+position: relative;
+left: 50%;
+transform: translateX(-50%);
+top: 50px;
+display: flex;
+flex-direction: column;
+justify-content: space-around;
+align-items: center;
+height: 150px;
+}
+#search_options_div{
+  position: absolute;margin-left: 30px;margin-top: 15px;
+}

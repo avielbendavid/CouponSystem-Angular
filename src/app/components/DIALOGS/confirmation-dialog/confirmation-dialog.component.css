@@ -1,0 +1,12 @@
+#dialog_img {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    width: 80px;
+}
+
+#btns_div {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}

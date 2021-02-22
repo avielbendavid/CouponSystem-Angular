@@ -1,6 +1,6 @@
-<div style="position: absolute;margin-left: 30px;margin-top: 15px;">
+<div id="search_options_div" >
   <span style="width: 225px;">
-    <input #maxPrice  type="number" placeholder="search coupons by max price">
+    <input #maxPrice type="number" placeholder="search coupons by max price">
   </span>
   <button (click)="searchByMaxPrice(maxPrice)" style="width: 50px; outline: none;">Click</button>
   <br>
@@ -16,17 +16,8 @@
 
 <button mat-fab matTooltip="Add new Coupon" class="addTableItem" (click)="openAddCouponDialog()">+</button>
 <app-coupons-table (refreshTable)="refresh()" (deleteCouponById)="deleteCoupon($event)"
-    [couponsTableData]="couponsTableData" [couponsTableColumn]="couponsTabelColumn"></app-coupons-table>
-<div *ngIf="!couponsTableData" style="width: 500px;
-position: relative;
-left: 50%;
-transform: translateX(-50%);
-top: 50px;
-display: flex;
-flex-direction: column;
-justify-content: space-around;
-align-items: center;
-height: 150px;">
-    <div>Please wait , Your request is in progress...</div>
-    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  [couponsTableData]="couponsTableData" [couponsTableColumn]="couponsTabelColumn"></app-coupons-table>
+<div *ngIf="!couponsTableData" id="wait_progress_div">
+  <div>Please wait , Your request is in progress...</div>
+  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
 </div>

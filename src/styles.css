@@ -69,6 +69,9 @@ button, input, select {
     width: 80px;
     outline: none;
 }
+.dialog_big_btn{
+    height: 50px; width: 100px;outline: none;border-radius: 6px;
+}
 
 select {
     border-radius: .25rem;

@@ -1,5 +1,5 @@
 <div style="position: relative;" *ngIf="this.response=='success'">
-    <img style="display: block; position: relative;left: 20%;" height="250px" width="300px" src="assets/images/success.png" alt="">
+    <img id="success_img" height="250px" width="300px" src="assets/images/success.png" alt="">
     <div style="padding: 25px;">
         <span>{{message}}</span>
     </div>
@@ -7,7 +7,7 @@
     <button matDialogClose class="close_btn">CLOSE</button>
     </div>
 </div>
-<div style="display: flex;flex-direction: column;justify-content: center;align-items: center;" *ngIf="this.response=='fail'">
+<div id="fail_container" *ngIf="this.response=='fail'">
     <img height="250px" width="250px" src="assets/images/fail.png" alt="">  
     <div style="padding: 25px;">
        <span>{{message}}</span>

@@ -48,14 +48,25 @@ export class CouponDetailsDialogComponent implements OnInit {
         this.apiSevice.purchaseCoupon(coupon).subscribe(
           (success) => { alert(success) },
           (error) => { this.errService.errorHandler(error); });
-      }
-      else {
-        this.route.navigate(['/login']);
+        return;
       }
     }
-    else {
-      this.route.navigate(['/login']);
-    }
+    this.route.navigate(['/login']);
   }
 
+  // buy(coupon: Coupon) {
+  //   if (this.appService.getUserType() == ClientType.CUSTOMER) {
+  //     if (this.isActive) {
+  //       this.apiSevice.purchaseCoupon(coupon).subscribe(
+  //         (success) => { alert(success) },
+  //         (error) => { this.errService.errorHandler(error); });
+  //     }
+  //     else {
+  //       this.route.navigate(['/login']);
+  //     }
+  //   }
+  //   else {
+  //     this.route.navigate(['/login']);
+  //   }
+  // }
 }

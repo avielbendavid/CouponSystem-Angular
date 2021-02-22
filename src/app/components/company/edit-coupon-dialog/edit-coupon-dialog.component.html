@@ -4,9 +4,7 @@
     </span>
 </div>
 <div id="fields_container">
-    <form autocomplete="on"
-        style="height: 80%;  display: flex;  flex-direction: column;  justify-content: space-around;"
-        [formGroup]="editCouponFormGroup">
+    <form autocomplete="on" id="editCouponForm" [formGroup]="editCouponFormGroup">
         <div>
             <mat-form-field style="margin-right: 50px; width: 150px;">
                 <mat-label>Category</mat-label>
@@ -17,7 +15,7 @@
 
             <mat-form-field style="margin-right: 50px;">
                 <mat-label>Title</mat-label>
-                <input required matInput  placeholder="Title" formControlName="title">
+                <input required matInput placeholder="Title" formControlName="title">
             </mat-form-field>
 
             <mat-form-field style="margin-right: 50px; width: 300px;">
@@ -34,7 +32,8 @@
                 <mat-datepicker #myDatePicker1></mat-datepicker>
             </mat-form-field>
             <mat-form-field>
-                <input matInput [matDatepicker]="myDatePicker2" formControlName="endDate" placeholder="End-Date" required>
+                <input matInput [matDatepicker]="myDatePicker2" formControlName="endDate" placeholder="End-Date"
+                    required>
                 <mat-datepicker-toggle [for]="myDatePicker2" matSuffix></mat-datepicker-toggle>
                 <mat-datepicker #myDatePicker2></mat-datepicker>
             </mat-form-field>
@@ -49,15 +48,14 @@
 
             <mat-form-field appearance="outline" style="margin-right: 50px;">
                 <mat-label>Price</mat-label>
-                <input  required matInput formControlName="price" type="number" placeholder="Price">
+                <input required matInput formControlName="price" type="number" placeholder="Price">
             </mat-form-field>
         </div>
 
         <div style="display: flex;justify-content: space-between;">
             <button [disabled]="this.editCouponFormGroup.invalid" (click)="updateCoupon()"
-                style="height: 50px; width: 100px;outline: none;border-radius: 6px;">UPDATE</button>
-            <button mat-dialog-close
-                style="height: 50px; width: 100px;outline: none;border-radius: 6px;">CANCEL</button>
+                class="dialog_big_btn">UPDATE</button>
+            <button mat-dialog-close class="dialog_big_btn">CANCEL</button>
         </div>
     </form>
 </div>

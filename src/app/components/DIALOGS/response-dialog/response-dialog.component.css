@@ -7,3 +7,9 @@
 .close_btn {
     outline: none;
 }
+#success_img{
+    display: block; position: relative;left: 20%;
+}
+#fail_container{
+    display: flex;flex-direction: column;justify-content: center;align-items: center;
+}
